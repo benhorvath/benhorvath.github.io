@@ -10,11 +10,11 @@ website:
   navbar:
     left:
       - text: Home
-        href: /
+        href: index.html
       - text: Blog
-        href: /posts/
+        href: posts/index.html
       - text: About
-        href: /about/git 
+        href: about.html
 
 format:
   html:
