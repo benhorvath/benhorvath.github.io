@@ -1,0 +1,21 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Benjamin Horvath"
+  description: "Personal site and blog"
+  favicon: "favicon.ico"
+  navbar:
+    left:
+      - text: Home
+        href: /
+      - text: Blog
+        href: /posts/
+      - text: About
+        href: /about/
+
+format:
+  html:
+    theme: cosmo
+    css: assets/styles.css

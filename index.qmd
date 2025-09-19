@@ -1,0 +1,10 @@
+---
+title: "Home"
+format: html
+---
+
+# Welcome
+
+This is a Quarto site scaffold for a personal website.
+
+Visit the blog to see posts.

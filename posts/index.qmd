@@ -1,0 +1,27 @@
+---
+title: "Blog"
+format: html
+---
+
+## Posts
+
+```{python}
+from pathlib import Path
+import frontmatter
+
+posts = []
+for p in sorted(Path('.').rglob('*.qmd')):
+  if p.name == 'index.qmd':
+    continue
+  meta = frontmatter.load(p)
+  title = meta.get('title', p.stem)
+  date = meta.get('date', '')
+  url = '/' + str(p.with_suffix('.html')).lstrip('./')
+  posts.append((date, title, url))
+
+posts.sort(reverse=True)
+
+for date, title, url in posts:
+  print(f"- [{title}]({url}) — {date}")
+```
+

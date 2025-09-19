@@ -1,0 +1,33 @@
+name: Build and Deploy Quarto site
+
+on:
+  push:
+    branches: [ main, master ]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Install Quarto
+        run: |
+          sudo apt-get update -y
+          wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.2.313/quarto-1.2.313-linux-amd64.deb -O quarto.deb
+          sudo dpkg -i quarto.deb
+      - name: Install Python deps
+        run: python -m pip install -r requirements.txt
+      - name: Render site
+        run: quarto render --no-cache
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          publish_dir: ./_site
+          publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
