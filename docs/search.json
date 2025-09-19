@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Short bio goes here."
+  },
+  {
+    "objectID": "about.html#about-me",
+    "href": "about.html#about-me",
+    "title": "About",
+    "section": "",
+    "text": "Short bio goes here."
+  },
+  {
+    "objectID": "posts/index.html",
+    "href": "posts/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "from pathlib import Path\nimport frontmatter\n\nposts = []\nfor p in sorted(Path('.').rglob('*.qmd')):\n  if p.name == 'index.qmd':\n    continue\n  meta = frontmatter.load(p)\n  title = meta.get('title', p.stem)\n  date = meta.get('date', '')\n  url = '/' + str(p.with_suffix('.html')).lstrip('./')\n  posts.append((date, title, url))\n\nposts.sort(reverse=True)\n\nfor date, title, url in posts:\n  print(f\"- [{title}]({url}) — {date}\")\n\n- [Welcome](/2025/09/0_welcome.html) — 2025-09-18"
+  },
+  {
+    "objectID": "posts/index.html#posts",
+    "href": "posts/index.html#posts",
+    "title": "Blog",
+    "section": "",
+    "text": "from pathlib import Path\nimport frontmatter\n\nposts = []\nfor p in sorted(Path('.').rglob('*.qmd')):\n  if p.name == 'index.qmd':\n    continue\n  meta = frontmatter.load(p)\n  title = meta.get('title', p.stem)\n  date = meta.get('date', '')\n  url = '/' + str(p.with_suffix('.html')).lstrip('./')\n  posts.append((date, title, url))\n\nposts.sort(reverse=True)\n\nfor date, title, url in posts:\n  print(f\"- [{title}]({url}) — {date}\")\n\n- [Welcome](/2025/09/0_welcome.html) — 2025-09-18"
+  },
+  {
+    "objectID": "posts/2025/09/0_welcome.html",
+    "href": "posts/2025/09/0_welcome.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Welcome to my Quarto blog. This is a sample post to verify the site scaffold."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Welcome\nThis is a Quarto site scaffold for a personal website.\nVisit the blog to see posts."
+  }
+]

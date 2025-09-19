@@ -1,6 +1,5 @@
 .venv/
 _site/
-docs/
 *.pyc
 __pycache__/
 
