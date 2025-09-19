@@ -4,3 +4,8 @@ _site/
 __pycache__/
 
 /.quarto/
+
+.DS_Store          # macOS Finder junk
+*.log              # any log files
+*.tmp              # temporary files
+.Rhistory
