@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: _site
+  output-dir: docs
 
 website:
   title: "Benjamin Horvath"
@@ -14,7 +14,7 @@ website:
       - text: Blog
         href: /posts/
       - text: About
-        href: /about/
+        href: /about/git 
 
 format:
   html:
